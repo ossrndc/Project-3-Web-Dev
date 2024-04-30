@@ -207,6 +207,7 @@ function timeUp() {
     timerSeconds === 0 &&
     timerMiliseconds === 0
   ) {
+    $(".beep").trigger("play");
     stopTimer();
     alert("Time's up!");
 
