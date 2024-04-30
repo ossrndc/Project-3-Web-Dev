@@ -110,6 +110,15 @@ $(".reset-stopwatch").click(function () {
   $(".laps").html("");
 });
 
+function resetStopwatch() { 
+  clearInterval(stopwatchInterval); 
+  stopwatchRunning = false;
+  $("#stopwatch-hour").html(0);
+  $("#stopwatch-min").html(0);
+  $("#stopwatch-sec").html(0);
+  $("#stopwatch-ms").html(0);
+}
+
 function addTrailingZero(number) {
   return number < 10 ? "0" + number : number;
 }
@@ -182,6 +191,12 @@ function stopTimer() {
 
 function resetTimer() {
   time = 0;
+  clearInterval(timerInterval); 
+  timerRunning = false;
+  $("#timer-hour").html(0);
+  $("#timer-min").html(0);
+  $("#timer-sec").html(0);
+  $("#timer-ms").html(0);
   setTime();
 }
 
@@ -192,6 +207,7 @@ function timeUp() {
     timerSeconds === 0 &&
     timerMiliseconds === 0
   ) {
+    $(".beep").trigger("play");
     stopTimer();
     alert("Time's up!");
 

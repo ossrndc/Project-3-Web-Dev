@@ -67,6 +67,7 @@ i {
   font-size: 20px;
 }
 .btns {
+  display: flex;
   margin-top: 20px;
   gap: 10px;
 }
