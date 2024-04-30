@@ -209,7 +209,7 @@ function timeUp() {
   ) {
     $(".beep").trigger("play");
     stopTimer();
-    alert("Time's up!");
+    alert("Time's up!"); 
 
     setTime();
   }
