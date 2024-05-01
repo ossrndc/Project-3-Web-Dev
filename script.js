@@ -103,6 +103,20 @@ $(".lap-stopwatch").click(function () {
   );
 });
 
+function resetStopwatch(){
+  clearInterval(stopwatchInterval);
+  stopwatchHours = 0;
+  stopwatchMinutes = 0;
+  stopwatchSeconds = 0;
+  stopwatchMiliSeconds = 0;
+  stopwatchRunning = false;
+  laps = 0;
+  $("#stopwatch-hour").html(addTrailingZero(stopwatchHours));
+  $("#stopwatch-min").html(addTrailingZero(stopwatchMinutes));
+  $("#stopwatch-sec").html(addTrailingZero(stopwatchSeconds));
+  $("#stopwatch-ms").html(addTrailingZero(stopwatchMiliSeconds));
+}
+
 $(".reset-stopwatch").click(function () {
   resetStopwatch();
   $(".start-stopwatch").show();
@@ -181,6 +195,9 @@ function stopTimer() {
 }
 
 function resetTimer() {
+  if (timerRunning){
+    stopTimer();
+  }
   time = 0;
   setTime();
 }
