@@ -158,7 +158,7 @@ function timer() {
   $("#timer-min").html(addTrailingZero(timerMinutes));
   $("#timer-sec").html(addTrailingZero(timerSeconds));
   $("#timer-ms").html(addTrailingZero(timerMiliseconds));
-
+  
   timeUp();
 }
 
@@ -193,9 +193,12 @@ function timeUp() {
     timerMiliseconds === 0
   ) {
     stopTimer();
-    alert("Time's up!");
-
-    setTime();
+    let audio = new Audio("./beep.mp3.mp3");
+    audio.play();
+    setTimeout(()=>{
+      alert("Time's up!")
+      setTime();
+    }, 300);
   }
 }
 
