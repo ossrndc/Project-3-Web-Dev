@@ -121,6 +121,7 @@ let time = 0,
   timerMiliseconds = 0,
   timerRunning = false,
   timerInterval;
+let audio = new Audio("./beep.mp3.mp3");
 
 function getTime() {
   time = prompt("Enter time in minutes");
@@ -193,12 +194,11 @@ function timeUp() {
     timerMiliseconds === 0
   ) {
     stopTimer();
-    let audio = new Audio("./beep.mp3.mp3");
     audio.play();
     setTimeout(()=>{
       alert("Time's up!")
       setTime();
-    }, 300);
+    }, 15);
   }
 }
 
