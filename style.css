@@ -69,8 +69,11 @@ i {
 .btns {
   margin-top: 20px;
   gap: 10px;
+  display: flex;
+  justify-content: center;
 }
 .btn {
+  margin-right: 5px;
   padding: 10px 20px;
   border-radius: 5px;
   color: #fff;
@@ -80,6 +83,27 @@ i {
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.content > .title{
+  margin-bottom: 25px;
+  color: #eef1f6;
+  font-size: 20px;
+  text-transform: none;
+}
+
+.clock > .wrapper{
+  padding: 30px 20px;
+  border-radius: 10px;
+  color: #fff;
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(1.5px);
